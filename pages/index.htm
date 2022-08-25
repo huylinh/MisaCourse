@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <title>Misa course</title>
+  </head>
+  <body>
+    <div class="title">Chào mừng bạn đến với misa</div>
+
+    <div class="row">
+      <label>1. Button</label>
+      <button class="m-button">Nộp hồ sơ</button>
+    </div>
+
+    <div class="row">
+      <label>2 Button</label>
+      <button class="m-button m-button-icon-add">Lập hồ sơ</button>
+      <div class="column-wrap">
+        <button class="m-button m-button-icon-add border-fix">
+          Lưu và thêm mới
+        </button>
+
+        <button class="button-arrow">
+          <ion-icon
+            class="icon-arr-down"
+            name="chevron-down-outline"
+          ></ion-icon>
+        </button>
+      </div>
+    </div>
+
+    <div class="row">
+      <label for=""> 3. Combo box </label>
+      <select class="combobox" name="combobox" id="combobox">
+        <option value="1">Nam</option>
+        <option value="1">Nu</option>
+        <option value="1">Linh</option>
+        <option value="1">Dung</option>
+      </select>
+    </div>
+
+    <div class="row">
+      <label for="">4.Field input - label</label>
+      <input class="input" type="text" name="text-input" id="" />
+    </div>
+
+    <div class="row">
+      <label class="label-input-icon" for="">5. Input Icon</label>
+      <input
+        class="input-icon"
+        type="text"
+        name="text-input"
+        id=""
+        placeholder="Tìm kiếm theo tên, số hồ sơ"
+      />
+    </div>
+
+    <div class="row">
+      <label for="">5. Toast</label>
+      <div class="toast-list">
+        <div class="toast">
+          <div class="toast__icon toast__icon--error"></div>
+          <div class="toast__text">Nội dung đi kèm tiêu đề</div>
+          <div class="toast__button"></div>
+        </div>
+        <div class="toast">
+          <div class="toast__icon toast__icon--warning"></div>
+          <div class="toast__text">Nội dung đi kèm tiêu đề</div>
+          <div class="toast__button"></div>
+        </div>
+        <div class="toast">
+          <div class="toast__icon toast__icon--success"></div>
+          <div class="toast__text">Nội dung đi kèm tiêu đề</div>
+          <div class="toast__button"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <label for="">6.Navigation page and table</label>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">&nbsp;</th>
+            <th scope="col">#</th>
+            <th scope="col">Mã Nhân viên</th>
+            <th scope="col">Họ và tên</th>
+            <th scope="col">Vị trí/Chức vụ</th>
+            <th scope="col">Bộ phận/Phòng ban</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>&nbsp;</td>
+            <td>1</td>
+            <td>0123455513</td>
+            <td>Nguyễn Hương Giang</td>
+            <td>Tổng giams đốc</td>
+            <td>Khối sản xuất</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>2</td>
+            <td>0987568788</td>
+
+            <td>Nguyễn Hương Giang</td>
+            <td>Tổng giams đốc</td>
+            <td>Văn phòng Sale</td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>3</td>
+            <td>0989448699</td>
+            <td>Nam Thành</td>
+            <td>Tổng giams đốc</td>
+            <td>Tổng công ty</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="table-bottom">
+        <div class="table-info">Hiển thị <span>01-20/123</span> lao động</div>
+        <div class="table-nav">
+          <button class="nav-icon nav-icon--firstpage"></button>
+          <button class="nav-icon nav-icon--secondpage"></button>
+          <button class="btn-number focus-btn">1</button>
+          <button class="btn-number">2</button>
+          <button class="btn-number">3</button>
+          <button class="btn-number">4</button>
+          <button class="nav-icon nav-icon--nextpage"></button>
+          <button class="nav-icon nav-icon--lastpage"></button>
+        </div>
+        <div class="table-info"><span>20</span> lao động/trang</div>
+      </div>
+    </div>
+
+    <div class="row">
+      <label for="">Pop-up canh bao</label>
+      <div class="dialog">
+        <div class="dialog-wrapper">
+          <button class="dialog__btn--exit"></button>
+          <div class="dialog__header"><b>Đóng Form thông tin chung</b></div>
+          <div class="dialog__content">Bạn có chắc muốn đóng form nhập <b>"Thông tin chung của thủ tục 603"</b> hay không</div>
+          <div class="dialog__footer">
+            <button class="dialog__btn dialog__btn--next"">Tiếp tục nhập</button> 
+            <button class="dialog__btn dialog__btn--close">Đóng</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- link script icon -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
