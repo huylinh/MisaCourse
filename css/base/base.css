@@ -1,0 +1,328 @@
+* {
+  padding: 0;
+  margin: 0;
+  /* box-sizing: border-box; */
+}
+
+body {
+  font-family: MISA Fonts;
+  margin-left: 5px;
+}
+
+.title {
+  width: 300px;
+  text-transform: uppercase;
+  background-color: aliceblue;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 1200px;
+}
+
+/* Button style */
+.m-button {
+  background-color: #019160;
+  border-radius: 4px;
+  height: 40px;
+  font-size: 13px;
+  color: #ffffff;
+  padding: 0px 24px;
+  border: none;
+  text-align: center;
+}
+
+.m-button:hover {
+  background-color: #2fbe8e;
+}
+
+.m-button:active {
+  background-color: #01b075;
+}
+
+.m-button-icon-add {
+  text-align: left;
+  padding: 0px 16px;
+  background-image: url(../assets/icon/add.png);
+  background-repeat: no-repeat;
+  background-position-x: 16px;
+  background-position-y: center;
+  /* can chinh cho chu cach icon hop li thi can biet duoc icon la 16px -> 40px = 16 padding left + 16px icon + 8px requirement */
+  padding-left: 40px;
+}
+
+.column-wrap {
+  display: flex;
+  margin-top: 5px;
+}
+
+.border-fix {
+  border-radius: 4px 0px 0px 4px;
+}
+
+.button-arrow {
+  background-color: #019160;
+  border-radius: 0px 4px 4px 0px;
+  height: 40px;
+  font-size: 13px;
+  color: #ffffff;
+  padding: 0px 12px;
+  border: none;
+  border-left: 0.5px solid #2fbe8e;
+  text-align: center;
+}
+
+.button-arrow:hover {
+  background-color: #2fbe8e;
+}
+
+.button-arrow:hover .icon-arr-down {
+  transform: rotate(180deg);
+}
+
+/* Combo Box style */
+.combobox {
+  border-width: 1px;
+  border-color: #bbbbbb;
+  border-radius: 4px;
+  height: 40px;
+  /* can lam them TODO  */
+}
+/* FIELD INPUT - LABEL */
+.input {
+  border: 1px solid #bbbbbb;
+  border-style: solid;
+  padding: 0px 16px;
+  height: 40px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #019160;
+}
+/* Input icon */
+.label-input-icon {
+  font-size: 13px;
+  color: #000000;
+  padding-bottom: 4px;
+}
+.input-icon {
+  border: 1px solid #bbbbbb;
+  border-radius: 4px;
+  padding-left: 40px;
+  padding-right: 40px;
+  height: 40px;
+  font-size: 11px;
+  color: #bbbbbb;
+  outline: none;
+  background-image: url(../assets/icon/search.png);
+  background-repeat: no-repeat;
+  background-position-x: 16px;
+  background-position-y: center;
+}
+
+.input-icon:focus {
+  border-color: #019160;
+  color: #000000;
+  font-size: 13px;
+}
+
+/* Block - Element - Modified */
+.toast-list {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+.toast {
+  display: flex;
+  height: 40px;
+  width: 200px;
+  border-radius: 4px;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  margin-bottom: 15px;
+}
+
+.toast__icon {
+  width: 16px;
+  height: 16px;
+  color: #019160;
+}
+
+.toast__text {
+  font-size: 13px;
+}
+
+.toast__button {
+  height: 16px;
+  width: 16px;
+  background-image: url(../assets/icon/x.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.toast__button:hover {
+  background-color: #bbbbbb;
+}
+
+.toast__icon--error {
+  background-image: url(../assets/icon/error.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.toast__icon--warning {
+  background-image: url(../assets/icon/Warn16.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.toast__icon--success {
+  background-image: url(../assets/icon/success-icon.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.toast__icon--info {
+}
+
+/* Table and page navigation */
+table,
+td,
+th {
+  border: none;
+  border-bottom: 1px solid #bbbbbb;
+  border-collapse: collapse;
+
+  padding: 10px;
+}
+
+/* Page navigation */
+.table-bottom {
+  height: 56px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.table-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 500px;
+}
+.nav-icon {
+  height: 30px;
+  width: 30px;
+  border: none;
+  border-radius: 50%;
+}
+
+.nav-icon:hover {
+  background-color: #bbbbbb;
+}
+
+.nav-icon--firstpage {
+  background-image: url(../assets/icon/btn-firstpage.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.nav-icon--secondpage {
+  background-image: url(../assets/icon/btn-prev-page.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.nav-icon--nextpage {
+  background-image: url(../assets/icon/btn-next-page.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.nav-icon--lastpage {
+  background-image: url(../assets/icon/btn-lastpage.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.btn-number {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1px solid #bbbbbb;
+}
+.focus-btn {
+  background-color: #019160;
+}
+
+.btn-number:hover {
+  background-color: #bbbbbb;
+}
+/* Pop up canh bao */
+/* sử dụng đểlàm mờ màn h */
+.dialog {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: #00000025;
+}
+.dialog-wrapper {
+  height: 150px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  border-radius: 4px;
+  background-color: #ffffff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.dialog__btn--exit {
+  height: 24px;
+  width: 24px;
+  background-image: url(../assets/icon/x.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  border: none;
+  background-color: #ffffff;
+}
+
+.dialog__header {
+  padding: 24px 48px 24px 24px;
+}
+.dialog__content {
+  width: 400px;
+  /* background-color: #ffffff; */
+  padding: 0px 24px 24px 24px;
+}
+.dialog__footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 24px;
+  background-color: #bbbbbb;
+}
+.dialog__btn {
+  height: 40px;
+  border-radius: 4px;
+  padding: 0px 16px;
+  border: none;
+}
+.dialog__btn--next {
+}
+
+.dialog__btn--close {
+  text-align: center;
+  margin-left: 16px;
+
+  background-color: #019160;
+}

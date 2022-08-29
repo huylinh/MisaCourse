@@ -1,0 +1,15 @@
+.icon-20 {
+  background-size: 20px 20px;
+}
+
+.icon-dashboard {
+  background-image: url(/assets/icon/dashboard.png);
+}
+
+.icon-employee {
+  background-image: url(/assets/icon/dic-employee.png);
+}
+
+.icon-report {
+  background-image: url(/assets/icon/report.png);
+}
