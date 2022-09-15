@@ -1,0 +1,57 @@
+.header {
+  display: flex;
+}
+
+.header__left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 71px;
+  border-right: 1px solid #bbb;
+}
+
+.header__side-bar {
+  width: 35px;
+  height: 35px;
+  background-image: url(/assets/img/toggle.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-right: 10px;
+}
+
+.header__logo {
+  width: 100px;
+  height: 35px;
+
+  background-image: url(/assets/img/cukcuk-logo.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* Header right style */
+
+.header__right {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 16px;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.user__avatar {
+  width: 36px;
+  height: 36px;
+  background-image: url(../../assets/icon/avatar-default.png);
+  background-repeat: no-repeat;
+  /* background-position: center; */
+  background-size: contain;
+}

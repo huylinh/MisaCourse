@@ -1,0 +1,34 @@
+/* Menu */
+.menu {
+  width: 200px;
+  height: 100%;
+}
+
+.menu__item {
+  display: flex;
+  align-items: center;
+
+  height: 44px;
+  width: 100%;
+}
+
+.menu__item:hover {
+  background-color: #e5e5e5;
+}
+
+.menu__focus {
+  background-color: #019160;
+  color: #fff;
+}
+
+.menu__icon {
+  width: 20px;
+  height: 20px;
+  padding: 0px 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.menu__text {
+  font-size: 13px;
+}

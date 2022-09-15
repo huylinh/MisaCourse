@@ -21,7 +21,7 @@
           </select>
           <div class="user">
             <div class="user__avatar"></div>
-            <div class="user__name">Nguyen Huy Linh</div>
+            <div class="user__name">Nguyễn Huy Linh</div>
           </div>
         </div>
       </div>
@@ -43,104 +43,269 @@
           </div>
         </div>
         <div class="content">
-          <!-- Them moi sua xoa tim kiem -->
-          <!-- Table
-         											
+          <div class="page__header">
+            <div class="page__header--title heading">Danh sách nhân viên</div>
+            <button
+              id="btnAdd"
+              class="page__header--button button button__icon button__icon--employee"
+            >
+              Thêm mới nhân viên
+            </button>
+          </div>
 
-          
-          -->
-          <table>
-            <thead>
-              <tr>
-                <th scope="col">STT</th>
-                <th scope="col">Mã Nhân viên</th>
-                <th scope="col">Họ và tên</th>
-                <th scope="col">Giới tính</th>
-                <th scope="col">Ngày sinh</th>
-                <th scope="col">Điện thoại</th>
-                <th scope="col">Email</th>
-                <th scope="col">Số chứng minh thư</th>
-                <th scope="col">Ngày cấp</th>
-                <th scope="col">Nơi cấp</th>
-                <th scope="col">Mã phòng ban</th>
-                <th scope="col">Vị trí</th>
-                <th scope="col">Phòng ban</th>
-                <th scope="col">Mức lương cơ bản</th>
-                <th scope="col">Tình trạng công việc</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>2</td>
-                <td>NV-522328</td>
-                <td>Võ Thị Dương</td>
-                <td>Nữ</td>
-                <td class="text-align--center">1/9/1958</td>
-                <td>09366854222</td>
-                <td>AdelaAbney@misa.com</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>Trưởng phòng</td>
-                <td>Phòng Công Nghệ Thông Tin</td>
-                <td class="text-align--right">22178937</td>
-                <td>1</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>NV-522328</td>
-                <td>Võ Thị Dương</td>
-                <td>Nữ</td>
-                <td class="text-align--center">1/9/1958</td>
-                <td>09366854222</td>
-                <td>AdelaAbney@misa.com</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>Trưởng phòng</td>
-                <td>Phòng Công Nghệ Thông Tin</td>
-                <td class="text-align--right">22178937</td>
-                <td>1</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>NV-522328</td>
-                <td>Võ Thị Dương</td>
-                <td>Nữ</td>
-                <td class="text-align--center">1/9/1958</td>
-                <td>09366854222</td>
-                <td>AdelaAbney@misa.com</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>&nbsp;</td>
-                <td>Trưởng phòng</td>
-                <td>Phòng Công Nghệ Thông Tin</td>
-                <td class="text-align--right">22178937</td>
-                <td>1</td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="table-bottom">
-            <div class="table-info">Hiển thị <b>01-20/123</b> lao động</div>
-            <div class="table-nav">
-              <button class="nav-icon nav-icon--firstpage"></button>
-              <button class="nav-icon nav-icon--secondpage"></button>
-              <button class="btn-number focus-btn">1</button>
-              <button class="btn-number">2</button>
-              <button class="btn-number">3</button>
-              <button class="btn-number">4</button>
-              <button class="nav-icon nav-icon--nextpage"></button>
-              <button class="nav-icon nav-icon--lastpage"></button>
+          <div class="page__toolbar">
+            <div class="page__toolbar--left">
+              <input
+                type="text"
+                class="input input__icon input__icon--search"
+                placeholder="Nhập tên muốn tìm kiếm"
+              />
+              <select name="" id="departmentID">
+                <option value="1">IT</option>
+              </select>
+              <select name="" id="positionID">
+                <option value="1">Dev</option>
+              </select>
             </div>
-
-            <div class="table-info"><b>20</b> lao động/trang</div>
-            <!-- input form -->
+            <div class="page__toolbar--right">
+              <button id="btnDelete"></button>
+              <button id="btnDuplicate"></button>
+              <button id="btnRefresh"></button>
+            </div>
+          </div>
+          <div class="page__table">
+            <div class="table__content">
+              <table class="tbEmployeelst">
+                <thead>
+                  <tr>
+                    <th propValue="Sort" scope="col">STT</th>
+                    <th propValue="employeeCode" scope="col">Mã Nhân viên</th>
+                    <th propValue="employeeName" scope="col">Họ và tên</th>
+                    <th propValue="gender" scope="col" format="gender">
+                      Giới tính
+                    </th>
+                    <th propValue="dateOfBirth" scope="col" format="date">
+                      Ngày sinh
+                    </th>
+                    <th propValue="phoneNumber" scope="col">Điện thoại</th>
+                    <th propValue="email" scope="col">Email</th>
+                    <th propValue="identityNumber" scope="col">
+                      Số chứng minh thư
+                    </th>
+                    <th
+                      propValue="identityIssuedDate"
+                      scope="col"
+                      format="date"
+                    >
+                      Ngày cấp
+                    </th>
+                    <th propValue="identityIssuedPlace" scope="col">Nơi cấp</th>
+                    <th propValue="positionName" scope="col">Vị trí</th>
+                    <th propValue="departmentName" scope="col">Phòng ban</th>
+                    <th propValue="salary" scope="col" format="money">
+                      Mức lương cơ bản
+                    </th>
+                    <th propValue="workStatus" scope="col" format="workStatus">
+                      Tình trạng công việc
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>2</td>
+                    <td>NV-522328</td>
+                    <td>Võ Thị Dương</td>
+                    <td>Nữ</td>
+                    <td class="text-align--center">1/9/1958</td>
+                    <td>09366854222</td>
+                    <td>AdelaAbney@misa.com</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
+                    <td>Trưởng phòng</td>
+                    <td>Phòng Công Nghệ Thông Tin</td>
+                    <td class="text-align--right">22178937</td>
+                    <td>1</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="table__paging">
+              <div class="table__paging--left">
+                Hiển thị <b id="numberOfEmployees">01-20/123</b> lao động
+              </div>
+              <div class="table__paging--center">
+                <!-- <button class="paging__button paging__button--first"></button>
+                <button class="paging__button paging__button--pre"></button>
+                <button class="paging__number paging__number--selected">
+                  1
+                </button>
+                <button class="paging__number">2</button>
+                <button class="paging__number">3</button>
+                <button class="paging__number">4</button>
+                <button class="paging__number">5</button>
+                <button class="paging__number">6</button>
+                <button class="paging__button paging__button--next"></button>
+                <button class="paging__button paging__button--last"></button> -->
+                <button class="paging__button paging__button--first"></button>
+                <button class="paging__button paging__button--pre"></button>
+                <div class="paging__numbers">
+                  <button class="paging__number paging__number--selected">
+                    1
+                  </button>
+                  <button class="paging__number">2</button>
+                  <button class="paging__number">3</button>
+                  <button class="paging__number">4</button>
+                  <button class="paging__number">5</button>
+                  <button class="paging__number">6</button>
+                </div>
+                <button class="paging__button paging__button--next"></button>
+                <button class="paging__button paging__button--last"></button>
+              </div>
+              <div class="table__paging--right">
+                <select>
+                  <option value="10">10 nhân viên/trang</option>
+                  <option value="20">20 nhân viên/trang</option>
+                  <option value="30">30 nhân viên/trang</option>
+                </select>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- dialog lam den man hinh co the xai chung cho ca pop up msg -->
+    <div id="employeeForm" class="dialog" hidden>
+      <div class="dialog__content">
+        <div class="dialog__wrapper">
+          <div class="dialog__btn--close"></div>
+          <div class="dialog__header title">Thông tin nhân viên</div>
+          <div class="dialog__body">
+            <div class="body__avatar">
+              <div class="body__avatar--employee"></div>
+              <div class="body__avatar--note">
+                (Vui lòng chọn ảnh có định dạng .jpg,.jpeg,.png,.gif.)
+              </div>
+            </div>
+            <div class="dialog__box-title grid-group-2-col">
+              Thông tin chung
+            </div>
+            <div class="dialog__input-field">
+              <label for="employeeCode"
+                >Mã nhân viên(<span class="red-asterisk">*</span>)</label
+              >
+              <input id="employeeCode" type="text" />
+            </div>
+            <div class="dialog__input-field">
+              <label for="employeeName"
+                >Họ và tên (<span class="red-asterisk">*</span>)</label
+              >
+              <input id="employeeName" type="text" />
+            </div>
+            <div class="dialog__input-field">
+              <label for="gender">Giới tính</label>
+              <select name="" id="gender">
+                <option value="1">Nam</option>
+                <option value="2">Nữ</option>
+                <option value="0">Khác</option>
+              </select>
+            </div>
+            <div class="dialog__input-field">
+              <label for="dateOfBirth">Ngày sinh</label>
+              <input id="dateOfBirth" type="date" />
+            </div>
+            <div class="dialog__input-field">
+              <label for="identityNumber"
+                >Số CMTND/Căn cước (<span class="red-asterisk">*</span>)
+              </label>
+              <input id="identityNumber" type="text" />
+            </div>
+            <div class="dialog__input-field">
+              <label for="identityIssuedDate">Ngày cấp</label>
+              <input id="identityIssuedDate"" type="date" />
+            </div>
+            <div class="dialog__input-field grid-group-2-col">
+              <label for="identityIssuedPlace">Nơi cấp</label>
+              <input id="identityIssuedPlace" type="text" />
+            </div>
+            <div class="dialog__input-field">
+              <label for="email"
+                >Email (<span class="red-asterisk">*</span>)</label
+              >
+              <input id="email" type="email" required />
+            </div>
+            <div class="dialog__input-field">
+              <label for="phoneNumber"
+                >Số điện thoại (<span class="red-asterisk">*</span>)</label
+              >
+              <input id="phoneNumber" type="text" />
+            </div>
+            <div class="dialog__box-title grid-group-2-col">
+              Thông tin công việc
+            </div>
+            <div class="dialog__input-field">
+              <label for="positionID">Vị trí</label>
+              <select name="" id="positionID">
+                <option value="1">Giám đốc</option>
+                <option value="2">IT</option>
+              </select>
+            </div>
+            <div class="dialog__input-field">
+              <label for="departmentID">Phòng ban</label>
+              <select name="" id="departmentID">
+                <option value="1">Phòng nhân sự</option>
+                <option value="2">Phòng giám đốc</option>
+              </select>
+            </div>
+            <div class="dialog__input-field">
+              <label for="salary">Mức lương cơ bản</label>
+              <input id="salary" type="text" />
+            </div>
+            <div class="dialog__input-field">
+              <label for="joiningDate">Ngày gia nhập công ty</label>
+              <input id="joiningDate" type="date" />
+            </div>
+            <div class="dialog__input-field">
+              <label for="workStatus">Tình trạng làm việc</label>
+              <select name="" id="workStatus">
+                <option value="0">Nghỉ việc</option>
+                <option value="1">Đang làm việc</option>
+                <option value="2">Thử việc</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="dialog__footer">
+          <button class="button dialog__btn--cancle">Hủy</button>
+          <button
+            id="btnSave"
+            class="footer__btn--save button button__icon button__icon--save"
+          >
+            Lưu
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- Pop-up message -->
+    <div id="deleteMsg" class="dialog" hidden>
+      <div class="pop-up-msg">
+        <div class="msg__header">
+          <div class="header__right">Xóa bản ghi</div>
+          <button class="dialog__btn--close pop-up__btn--close"></button>
+        </div>
+        <div class="msg__body">
+          <div class="pop-up__icon--delete icon-20 icon-delete"></div>
+          <div class="msg__content">
+            Bạn có chắc muốn xóa bản ghi này không?
+          </div>
+        </div>
+        <div class="msg__footer">
+          <button class="msg__btn--close dialog__btn--cancle">Đóng</button>
+          <button class="msg__btn--delete">Xóa</button>
+        </div>
+      </div>
+    </div>
+    <script src="./js/jquery-3.6.1.min.js"></script>
+    <script src="./js/pages/script.js"></script>
   </body>
 </html>

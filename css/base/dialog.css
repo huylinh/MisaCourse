@@ -1,0 +1,143 @@
+.dialog {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: #00000025;
+}
+
+.dialog__content {
+  /* height: 150px; */
+  width: 700px;
+  /* background-color: #ffffff; */
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  border-radius: 4px;
+  background-color: #ffffff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.dialog__wrapper {
+  padding: 0px 24px 24px 24px;
+}
+
+.dialog__btn--close {
+  height: 40px;
+  width: 40px;
+  background-image: url(../../assets/icon/x.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 5px;
+  right: 2px;
+  border: none;
+  /* Mau do filter */
+  filter: invert(20%) sepia(100%) saturate(3000%);
+}
+
+.dialog__btn--close:hover {
+  background-color: #bbb;
+  filter: none;
+  opacity: 1;
+}
+
+.dialog__header {
+  padding: 16px 32px 16px 16px;
+}
+
+.dialog__body {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1.5fr;
+  grid-template-rows: repeat(10, 1fr);
+  gap: 8px;
+}
+
+.red-asterisk {
+  color: red;
+}
+
+.body__avatar {
+  grid-row: 1/-1;
+  width: 100%;
+  /* height: 200px; */
+}
+
+.body__avatar--employee {
+  width: 100%;
+  height: 30%;
+  /* background-color: rebeccapurple; */
+  border-radius: 50%;
+  background-image: url(../../assets/icon/avatar-default.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* Gom 2 column voi nhau */
+.grid-group-2-col {
+  grid-column: 2/4;
+  width: 50%;
+}
+
+.dialog__box-title {
+  align-self: center;
+  position: relative;
+  /* text-decoration: underline; */
+  /* border-bottom: 2px solid #019160; */
+}
+
+.dialog__box-title::before {
+  content: "";
+  position: absolute;
+  width: 25%;
+  height: 4px;
+  bottom: -8px;
+  left: 0px;
+  /* background-color: black; */
+  border-bottom: 4px solid #019160;
+}
+
+.dialog__input-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.dialog__input-field input,
+.dialog__input-field select {
+  height: 30px;
+  margin-top: 4px;
+}
+
+.dialog__input-field input:focus,
+.dialog__input-field select:focus {
+  border: 3px solid #019160;
+}
+
+.input--error {
+  border: 3px solid red;
+}
+
+.dialog__footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 5px 12px;
+  background-color: gainsboro;
+}
+
+.dialog__btn {
+  height: 40px;
+  border-radius: 4px;
+  padding: 0px 16px;
+  border: none;
+}
+
+.dialog__btn--cancle {
+  text-align: center;
+  background-color: rgba(220, 220, 220, 0.1);
+  margin-left: 16px;
+  color: black;
+  /* background-color: #019160; */
+}

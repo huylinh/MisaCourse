@@ -1,4 +1,4 @@
-.combo-box,
+.combobox,
 select {
   border: 1px solid #bbb;
   border-radius: 4px;
@@ -7,4 +7,5 @@ select {
   font-size: 14px;
   padding-right: 56px;
   padding-left: 16px;
+  outline: none;
 }

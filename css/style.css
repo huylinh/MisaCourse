@@ -1,3 +1,20 @@
-@import url(layout/layout.css);
+@import url(base/general.css);
+@import url(layout/main.css);
+@import url(layout/content.css);
+@import url(layout/menu.css);
+@import url(layout/header.css);
 @import url(base/combobox.css);
 @import url(base/icon.css);
+@import url(base/button.css);
+@import url(base/table.css);
+@import url(base/input.css);
+@import url(pages/employee.css);
+@import url(base/dialog.css);
+@import url(base/popupmsg.css);
+
+/* Media querry */
+@media (max-width: 1100px) {
+  .menu {
+    display: none;
+  }
+}

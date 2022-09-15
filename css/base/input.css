@@ -1,0 +1,21 @@
+input {
+  height: 40px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  padding: 0px 16px;
+  font-family: MISA Fonts;
+  outline: none;
+}
+
+.input__icon {
+  background-size: 16px 16px;
+  padding: 0px 8px 0px 16px;
+  background-repeat: no-repeat;
+  background-position-x: 16px;
+  background-position-y: center;
+  padding-left: 40px;
+}
+
+.input__icon--search {
+  background-image: url(../../assets/icon/search.png);
+}

@@ -1,0 +1,34 @@
+#btnDelete {
+  border-radius: 4px;
+  height: 40px;
+  width: 40px;
+  border: 1px solid #bbbbbb;
+  background-image: url(../../assets/icon/delete.png);
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: center;
+  cursor: pointer;
+}
+
+#btnRefresh {
+  border-radius: 4px;
+  height: 40px;
+  width: 40px;
+  border: 1px solid #bbbbbb;
+  background-image: url(../../assets/icon/refresh.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
+}
+
+#btnDuplicate {
+  border-radius: 4px;
+  height: 40px;
+  width: 40px;
+  border: 1px solid #bbbbbb;
+  background-image: url(../../assets/icon/duplicate.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  cursor: pointer;
+}

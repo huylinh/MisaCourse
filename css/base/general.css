@@ -1,0 +1,75 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: MISA Fonts Regular;
+  src: url(../../assets/font/GoogleSans-Regular.otf);
+}
+
+@font-face {
+  font-family: MISA Fonts Bold;
+  src: url(../../assets//font/GoogleSans-Bold.otf);
+}
+
+@font-face {
+  font-family: MISA Fonts Italic;
+  src: url(../../assets/font/GoogleSans-Italic.otf);
+}
+
+@font-face {
+  font-family: MISA Fonts Medium;
+  src: url(../../assets/font/GoogleSans-Medium.otf);
+}
+
+body {
+  color: #454545;
+  font-size: 13px;
+  min-width: 1024px;
+  font-family: MISA Fonts Regular;
+}
+
+.heading {
+  font-family: MISA Font Bold;
+  font-size: 24px;
+  color: #000000;
+}
+
+.title {
+  font-family: MISA Fonts Bold;
+  font-size: 20px;
+  color: #000000;
+}
+
+.title2 {
+  font-family: MISA Fonts Bold;
+  font-family: 15px;
+  color: #000000;
+}
+
+.label-field-input {
+  font-family: MISA Fonts Medium;
+  font-size: 13px;
+  color: #000000;
+}
+
+.label {
+  font-family: MISA Fonts Reugular;
+  font-size: 13px;
+  color: #454545;
+}
+
+.content-details {
+  font-family: MISA Fonts Medium;
+  font-size: 13px;
+  color: #000000;
+}
+
+/* sub-text/hint-text */
+.hint-text {
+  font-family: MISA Fonts Regular;
+  font-size: 11px;
+  color: #bbbbbb;
+}

@@ -13,3 +13,7 @@
 .icon-report {
   background-image: url(/assets/icon/report.png);
 }
+
+.icon-delete {
+  background-image: url(../../assets/icon/delete.png);
+}

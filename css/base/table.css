@@ -1,0 +1,118 @@
+.page__table {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: auto;
+  /* height: 100%; */
+}
+
+.table__content {
+  flex: 1;
+  overflow-y: scroll;
+  /* height: 100%; */
+}
+/* .tbEmployeelst {
+  
+  height: 100%;
+} */
+table,
+td,
+th {
+  border: none;
+  border-bottom: 1px solid #bbbbbb;
+  border-spacing: 0px;
+  padding: 10px;
+}
+
+table {
+  /* background-color: bisque; */
+  width: 100%;
+  border-bottom: none;
+}
+
+.tbEmployeelst thead {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  border-bottom: 1px solid #bbb;
+}
+
+.tbEmployeelst tbody tr:hover {
+  background-color: #0191618a;
+}
+
+.row-selected {
+  background-color: #0191618a;
+}
+/* Page navigation */
+
+.table__paging {
+  height: 56px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #bbb;
+}
+.table__paging--left {
+  font-size: 15px;
+  flex-basis: 240px;
+}
+
+.table__paging--center {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  /* justify-content: center; */
+}
+.table__paging--center {
+  display: flex;
+  align-items: center;
+}
+.paging__button {
+  height: 30px;
+  width: 30px;
+  padding: 1px 6px;
+  margin: 0px 4px;
+  border-radius: 4px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  border: 1px solid transparent;
+  /* hover  */
+  background-color: #ffffff;
+}
+
+.paging__button:hover {
+  border: 1px solid #bbbbbb;
+}
+
+.paging__button--first {
+  background-image: url(../../assets/icon/btn-firstpage.svg);
+}
+.paging__button--pre {
+  background-image: url(../../assets/icon/btn-prev-page.svg);
+}
+.paging__number {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  padding: 1px 6px;
+  margin: 0px 4px;
+  background-color: #ffffff;
+  border: 1px solid #bbbbbb;
+}
+.paging__number--selected {
+  background-color: #019160;
+}
+.paging__button--next {
+  background-image: url(../../assets/icon/btn-next-page.svg);
+}
+.paging__button--last {
+  background-image: url(../../assets/icon/btn-lastpage.svg);
+}
+
+.paging__number:hover {
+  background-color: #bbbbbb;
+}
