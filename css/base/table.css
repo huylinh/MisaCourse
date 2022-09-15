@@ -98,7 +98,6 @@ table {
   height: 30px;
   width: 30px;
   border-radius: 50%;
-  padding: 1px 6px;
   margin: 0px 4px;
   background-color: #ffffff;
   border: 1px solid #bbbbbb;
@@ -115,4 +114,8 @@ table {
 
 .paging__number:hover {
   background-color: #bbbbbb;
+}
+
+.disable {
+  display: none;
 }

@@ -17,7 +17,7 @@ var positionID = "";
 var departmentID = "";
 var filterWord = "";
 var totalPages;
-var paginationSize = 8; //Tức là có 8 số để chuyển trang
+var paginationSize = 8; //Tức là có 8 số để chuyển trang (bao gồm cả dấu 3 bấm luôn)
 /**
  * Tạo các sự kiện
  * Author: Nguyễn Huy Linh
@@ -138,7 +138,7 @@ function initEvents() {
     });
   });
 
-  //Nhan ban
+  //Nhân bản
   $("#btnDuplicate").click(function () {
     if (employeeID) {
       $("#employeeForm").show();
@@ -150,20 +150,24 @@ function initEvents() {
   //Lựa chọn bao nhiêu bản ghi trên một trang
   $(".table__paging--right select").change(function () {
     pageSize = $(this).val();
+    pageNumber = 1;
     loadData();
   });
 
   //Tìm kiếm thông tin theo combobox
   $(".page__toolbar--left #departmentID").change(function () {
     departmentID = $(this).val();
+    pageNumber = 1;
     loadData();
   });
   $(".page__toolbar--left #positionID").change(function () {
     positionID = $(this).val();
+    pageNumber = 1;
     loadData();
   });
   $(".page__toolbar--left input").keyup(function () {
     filterWord = $(this).val();
+    pageNumber = 1;
     loadData();
   });
 
@@ -176,6 +180,7 @@ function initEvents() {
     positionID = "";
     departmentID = "";
     filterWord = "";
+    pageNumber = 1;
     $(".row-selected").removeClass("row-selected");
     loadData();
     $(".page__toolbar--left #departmentID").val("");
@@ -184,10 +189,27 @@ function initEvents() {
   });
 
   //Phân trang
-  $(".paging__number").click(function () {
+  // $(".paging__number").click(function () {
+  //   console.log(this);
+  // });
+  $(document).on("click", ".paging__number", function () {
     pageNumber = $(this).text();
-    $(this).siblings().removeClass("paging__number--selected");
-    $(this).addClass("paging__number--selected");
+    loadData();
+  });
+  $(".paging__button--next").click(function () {
+    pageNumber++;
+    loadData();
+  });
+  $(".paging__button--pre").click(function () {
+    pageNumber--;
+    loadData();
+  });
+  $(".paging__button--first").click(function () {
+    pageNumber = 1;
+    loadData();
+  });
+  $(".paging__button--last").click(function () {
+    pageNumber = totalPages;
     loadData();
   });
 }
@@ -416,9 +438,12 @@ function loadData() {
         $(trElement).data("entity", emp);
         //Cap nhat du lieu len tren bang
         $(".tbEmployeelst tbody").append(trElement);
-
-        //Hiển thị số số nhân viên trên màn hình
-        if (employees.total < pageSize) {
+        // Tính số trang
+        totalPages = Math.ceil(employees.total / pageSize);
+        //vẽ pagination
+        drawPagination();
+        //Hiển thị số số nhân viên trên màn hình / Tổng số
+        if (employees.total < pageSize || pageNumber == totalPages) {
           $("#numberOfEmployees").text(
             `${pageSize * (pageNumber - 1) + 1}-${employees.total}/${
               employees.total
@@ -431,9 +456,6 @@ function loadData() {
             }`
           );
         }
-        // Tính số trang
-        totalPages = Math.ceil(employees.total / pageSize);
-        drawPagination();
       }
     },
     error: function (employees) {
@@ -447,7 +469,56 @@ function loadData() {
  * Author: nhlinh
  */
 
-function drawPagination() {}
+function drawPagination() {
+  //clear
+  $(".paging__numbers").empty();
+
+  //Tạo một mảng lưu số trang
+  function range(start, end) {
+    return Array.from(Array(end - start + 1), (_, i) => i + start);
+  }
+
+  $(".paging__button--pre").toggleClass("disable", pageNumber == 1);
+  $(".paging__button--next").toggleClass("disable", pageNumber == totalPages);
+  //Tạo mảng trang có kiểu như sau 1 2  ...  13 14 15(C) 16 17 .. 28 29, 1 2 ... 10 , 1 .. 9 10
+  //----------------------------sideWidth ... leftWidth/rightWidth .. sideWidth
+  const sideWidth = paginationSize < 9 ? 1 : 3;
+  const leftWidth = Math.trunc((paginationSize - sideWidth * 2 - 3) / 2);
+  const rightWidth = Math.trunc((paginationSize - sideWidth * 2 - 3) / 2); // tru 3 là 2  dấu ba chấm, trang đang được chọn
+  let arrayPageList;
+  //Tổng số trang nhỏ hơn số nút bấm trên trang thi mảng bằng số trang luôn
+  if (totalPages <= paginationSize) {
+    arrayPageList = range(1, totalPages);
+  }
+  //không được vượt qua số trang đã cố định ở bên phải
+  else if (pageNumber <= paginationSize - sideWidth - 1 - rightWidth) {
+    arrayPageList = range(1, paginationSize - sideWidth - 1).concat(
+      0,
+      range(totalPages - sideWidth + 1, totalPages)
+    );
+  } else if (pageNumber >= totalPages - sideWidth - 1 - rightWidth) {
+    arrayPageList = range(1, sideWidth).concat(
+      0,
+      range(totalPages - sideWidth - 1 - rightWidth - leftWidth, totalPages)
+    );
+  } else {
+    arrayPageList = range(1, sideWidth).concat(
+      0,
+      range(pageNumber - leftWidth, pageNumber + rightWidth),
+      0,
+      range(totalPages - sideWidth + 1, totalPages)
+    );
+  }
+
+  arrayPageList.forEach((number) => {
+    let btnNumber = $("<button></button>")
+      .addClass("paging__number")
+      .text(`${number || "..."}`);
+    if (number == pageNumber) btnNumber.addClass("paging__number--selected");
+    $(".paging__numbers").append(btnNumber);
+  });
+  // focus vào trang thứ nhất
+}
 
 /**
  * Load dữ liệu từ database lên combobox, form
