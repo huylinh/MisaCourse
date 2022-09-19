@@ -10,6 +10,11 @@
 }
 
 @font-face {
+  font-family: MISA Fonts;
+  src: url(../../assets/font/GoogleSans-Regular.otf);
+}
+
+@font-face {
   font-family: MISA Fonts Bold;
   src: url(../../assets//font/GoogleSans-Bold.otf);
 }
@@ -28,7 +33,7 @@ body {
   color: #454545;
   font-size: 13px;
   min-width: 1024px;
-  font-family: MISA Fonts Regular;
+  font-family: MISA Fonts Regular !important;
 }
 
 .heading {
