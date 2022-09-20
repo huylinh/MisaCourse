@@ -32,7 +32,7 @@ function initEvents() {
     $(".dialog__body input,.dialog__body select").val("");
     $("#employeeCode").focus();
     $.ajax({
-      url: "http://192.168.1.8:81/api/Employees/NewEmployeeCode",
+      url: "http://localhost:6268/api/Employees/NewEmployeeCode",
       method: "GET",
       success: function (newEmployeeCode) {
         $("#employeeCode").val(newEmployeeCode);
@@ -74,7 +74,7 @@ function initEvents() {
         console.log(JSON.stringify(employee));
         $.ajax({
           type: "POST",
-          url: "http://192.168.1.8:81/api/Employees",
+          url: "http://localhost:6268/api/Employees",
           data: JSON.stringify(employee),
           dataType: "json",
           contentType: "application/json",
@@ -87,7 +87,7 @@ function initEvents() {
       }
     } else if (format == "edit") {
       //Kiem tra lai du lieu moi roi update
-      //http://192.168.1.8:81/api/Employees/3fa85f64-5717-4562-b3fc-2c963f66afa6
+      //http://localhost:6268/api/Employees/3fa85f64-5717-4562-b3fc-2c963f66afa6
 
       employee = $(".row-selected").data("entity");
 
@@ -95,7 +95,7 @@ function initEvents() {
         employee["ModifiedDate"] = new Date();
         $.ajax({
           type: "PUT",
-          url: "http://192.168.1.8:81/api/Employees/" + employeeID,
+          url: "http://localhost:6268/api/Employees/" + employeeID,
           data: JSON.stringify(employee),
           dataType: "json",
           contentType: "application/json",
@@ -128,7 +128,7 @@ function initEvents() {
   $(".msg__btn--delete").click(function () {
     $.ajax({
       type: "DELETE",
-      url: "http://192.168.1.8:81/api/Employees/" + employeeID,
+      url: "http://localhost:6268/api/Employees/" + employeeID,
       success: function (response) {
         $("#deleteMsg").hide();
         alert("Xóa bản ghi thành công");
@@ -193,7 +193,7 @@ function initEvents() {
   //   console.log(this);
   // });
   $(document).on("click", ".paging__number", function () {
-    pageNumber = $(this).text();
+    pageNumber = Number($(this).text());
     loadData();
   });
   $(".paging__button--next").click(function () {
@@ -217,7 +217,7 @@ function initEvents() {
 function fillForm() {
   $.ajax({
     type: "GET",
-    url: "http://192.168.1.8:81/api/Employees/" + employeeID,
+    url: "http://localhost:6268/api/Employees/" + employeeID,
     success: function (employee) {
       inputElements = $("#employeeForm input,#employeeForm select");
       for (const input of inputElements) {
@@ -284,7 +284,7 @@ function checkValue(input, propValue) {
   switch (propValue) {
     case "employeeCode":
       $.ajax({
-        url: "http://192.168.1.8:81/api/Employees",
+        url: "http://localhost:6268/api/Employees",
         method: "GET",
         async: false,
         success: function (employees) {
@@ -365,7 +365,7 @@ function checkValue(input, propValue) {
 function loadData() {
   //Lay du lieu
   $.ajax({
-    url: `http://192.168.1.8:81/api/Employees/filter?filterWord=${filterWord}&positionID=${positionID}&departmentID=${departmentID}&pageSize=${pageSize}&pageNumber=${pageNumber}`,
+    url: `http://localhost:6268/api/Employees/filter?filterWord=${filterWord}&positionID=${positionID}&departmentID=${departmentID}&pageSize=${pageSize}&pageNumber=${pageNumber}`,
     method: "GET",
     async: false,
     success: function (employees) {
@@ -433,6 +433,7 @@ function loadData() {
           // Đẩy vào trHMTL:
           trElement.append(thHTML);
         }
+
         sort++;
         $(trElement).data("id", emp.employeeID);
         $(trElement).data("entity", emp);
@@ -496,12 +497,13 @@ function drawPagination() {
       0,
       range(totalPages - sideWidth + 1, totalPages)
     );
-  } else if (pageNumber >= totalPages - sideWidth - 1 - rightWidth) {
+  } else if (pageNumber > totalPages - sideWidth - 1 - rightWidth) {
     arrayPageList = range(1, sideWidth).concat(
       0,
       range(totalPages - sideWidth - 1 - rightWidth - leftWidth, totalPages)
     );
   } else {
+    debugger;
     arrayPageList = range(1, sideWidth).concat(
       0,
       range(pageNumber - leftWidth, pageNumber + rightWidth),
@@ -535,7 +537,7 @@ function loadDataCombobox() {
   formDepartmentCombobox.empty();
   formPositionCombobox.empty();
   $.ajax({
-    url: "http://192.168.1.8:81/api/Departments",
+    url: "http://localhost:6268/api/Departments",
     method: "GET",
     success: function (departments) {
       const optionElement0 = $(`<option value="">Chọn phòng ban</option>`);
@@ -554,7 +556,7 @@ function loadDataCombobox() {
   });
 
   $.ajax({
-    url: "http://192.168.1.8:81/api/Positions",
+    url: "http://localhost:6268/api/Positions",
     method: "GET",
     success: function (positions) {
       const optionElement0 = $(`<option value="">Chọn vị trí</option>`);
